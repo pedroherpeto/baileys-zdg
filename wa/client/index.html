@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Wabill</title>
+		<meta name="description" content="Kirim tagihan melalui WhatsApp secara otomatis.">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+		<link rel="icon" type="image/svg" href="./assets/icon.svg"/>
+		<link rel="stylesheet" type="text/css" href="./assets/main.css">
+	</head>
+	<body>
+		<header>
+			<img src="./assets/logo.svg">
+			<p>Kirim tagihan (atau pesan apapun) melalui WhatsApp secara otomatis.</p>
+		</header>
+		<main>
+			<section>
+				<div class="card">
+					<div class="title">Server</div>
+					<div class="body server-input">
+						<input type="text" id="server" value="http://localhost:8000/">
+						<button id="save-server" onclick="toast('fitur simpan belum tersedia')">simpan</button>
+					</div>
+				</div>
+			</section>
+			<section class="preview-card preview-hidden">
+				<div class="card">
+					<div class="title">Preview</div>
+					<div class="body">
+						<p>preview dari semua pesan akan muncul di sini.</p>
+						<div class="outer-preview-wrapper">
+							<div class="preview-wrapper"></div>
+						</div>
+						<div class="footer">
+							<div></div>
+							<button id="send" onclick="sendMessages()">kirim</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="middle">
+				<div>
+					<div class="card data-area">
+						<div class="title">Data</div>
+						<div class="body data-input">
+							<div class="table-wrapper">
+								<table>
+									<thead></thead>
+									<tbody></tbody>
+								</table>
+							</div>
+							<div class="pull-tab"></div>
+							<textarea id="data" autofocus placeholder="Tempelkan data anda dari excel/google sheets di sini. pastikan baris pertama merupakan nama dari kolomnya. pastikan kolom pertama merupakan nomor whatsapp tujuan."></textarea>
+						</div>
+						<div class="footer">
+							<button id="format" onclick="formatData()">format</button>
+							<button id="save-template" class="outline" onclick="toast('fitur simpan belum tersedia')">simpan</button>
+							<button class="outline" id="reset" onclick="resetData()">reset</button>
+							<button class="outline" id="edit" onclick="editData()">edit</button>
+						</div>
+					</div>
+				</div>
+				<div class="progress-area-wrapper">
+					<div class="card progress-area">
+						<div class="title">Progress</div>
+						<div class="body">
+							<h3>2/6</h3>
+							<p class="loading-dots">Sending</p>
+						</div>
+					</div>
+				</div>
+				<div class="template-area-wrapper">
+					<div class="card template-area">
+						<div class="title">Template</div>
+						<div class="body">
+							<div class="pull-tab"></div>
+							<textarea id="template" placeholder="Masukkan template pesan anda di sini"></textarea>
+						</div>
+						<div class="footer">
+							<div></div>
+							<button id="preview" onclick="previewMessage()">preview</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p title="dibuat pada 5 Maret 2021 - ">dibuat dengan <span>&hearts;</span> oleh <a href="https://afarhansib.github.io">afarhansib</a></p>
+		</footer>
+		<script src="./assets/main.js"></script>
+	</body>
+</html>

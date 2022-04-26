@@ -1,0 +1,38 @@
+{
+  "name": "wabill",
+  "version": "1.0.0",
+  "description": "WhatsApp API using baileys",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "nodemon index.json",
+    "build": "pkg ."
+  },
+  "keywords": [
+    "WhatsApp"
+  ],
+  "author": {
+    "name": "Ahmad Farhan Sibghotalloh",
+    "email": "afarhansib@gmail.com",
+    "url": "https://afarhansib.github.io"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.5.2",
+    "express": "^4.17.1",
+    "qrcode": "^1.4.4",
+    "socket.io": "^4.1.3"
+  },
+  "pkg": {
+    "assets": [
+      "client/**/*"
+    ],
+    "targets": [
+      "node16-linux-x64",
+      "node16-win-x64"
+    ],
+    "outputPath": "dist"
+  }
+}
